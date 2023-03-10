@@ -20,10 +20,6 @@ with_fx :flanger do
   sleep 1
   play:e5
   sleep 1
-  play:e5
-  sleep 1
-  play:e5
-  sleep 1
 end
 
 use_synth :tech_saws
@@ -43,18 +39,11 @@ play:e5
 sleep 1
 play:d5
 sleep 1
-play:e5
-sleep 1
-play:d5
-sleep 1
-play:e5
-sleep 1
-play:d5
 
 amp_fade = (ring 2, 1.5, 1, 0.5, 0)
 
-1.times do
-  lyrics
+live_loop :lyric do
+  sample lyrics, amp: 4
 end
 
 live_loop :treble do
