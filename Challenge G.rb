@@ -6,7 +6,6 @@ index = 0
 
 live_loop :main_theme do
   with_fx :distortion do
-    16.times
     play notes[index]
     sleep 0.5
     index = index + 1
