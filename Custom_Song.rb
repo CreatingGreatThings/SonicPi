@@ -1,5 +1,12 @@
 lyrics = "C:/Users/marcelo_aeschbacher/Desktop/.wav.wav"
 
+define :d5e5 do
+  play:d5
+  sleep 1
+  play:e5
+  sleep 1
+end
+
 with_fx :flanger do
   use_bpm 148
   use_synth :tech_saws
@@ -25,18 +32,9 @@ end
 use_synth :tech_saws
 play:e5
 sleep 1
-play:d5
-sleep 1
-play:e5
-sleep 1
-play:d5
-sleep 1
-play:e5
-sleep 1
-play:d5
-sleep 1
-play:e5
-sleep 1
+d5e5
+d5e5
+d5e5
 play:d5
 sleep 1
 
