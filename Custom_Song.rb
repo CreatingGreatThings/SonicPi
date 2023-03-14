@@ -1,4 +1,4 @@
-lyrics = "C:/Users/marcelo_aeschbacher/Desktop/.wav.wav"
+ lyrics = "C:/Users/marcelo_aeschbacher/Desktop/.wav.wav"
 
 define :d5e5 do
   play:d5
@@ -38,11 +38,13 @@ d5e5
 play:d5
 sleep 1
 
-amp_fade = (ring 2, 1.5, 1, 0.5, 0)
-
 live_loop :lyric do
   sample lyrics, amp: 4
+  stop
 end
+
+amp_fade = [2, 1.5, 1, 0.5, 0]
+index = 0
 
 live_loop :treble do
   use_bpm 148
@@ -51,24 +53,32 @@ live_loop :treble do
   sleep 1
   play:e5
   sleep 1
-  play:d5, sustain: 2
+  play:d5, sustain: 2 , amp: amp_fade[index]
   sleep 1
-  play:d5
+  index = index + 1
+  play:d5, amp: amp_fade[index]
   sleep 1
-  play:e5
+  index = index + 1
+  play:e5, amp: amp_fade[index]
   sleep 1
-  play:c5
+  index = index + 1
+  play:c5, amp: amp_fade[index]
   sleep 1
-  play:d5, sustain: 2
+  index = index + 1
+  play:d5, sustain: 2, amp: amp_fade[index]
   sleep 1
-  play:e5
+  index = index - 1
+  play:e5, amp: amp_fade[index]
   sleep 1
-  play:e5
+  index = index - 1
+  play:e5, amp: amp_fade[index]
   sleep 1
-  play:d5, sustain: 2
+  index = index - 1
+  play:d5, sustain: 2, amp: amp_fade[index]
   sleep 1
-  play:gs4, sustain: 4, amp: amp_fade
-  play:d4, sustain: 4, amp: amp_fade
+  index = index - 1
+  play:gs4, sustain: 4, amp: amp_fade[index]
+  play:d4, sustain: 4, amp: amp_fade[index]
   stop
 end
 
