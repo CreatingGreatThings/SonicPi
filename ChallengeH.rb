@@ -9,6 +9,7 @@ play n3
 play n4
 sleep 0.5
 play n5
+play n6
 sleep 0.5
 play n7
 play n8
