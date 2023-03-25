@@ -1,9 +1,30 @@
 use_bpm 120
 use_synth :chiplead
 
-define :kombat do |scorpion, subzero|
-  play scorpion
-  play subzero
+define :kombat do |n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16|
+play n1
+  play n2
+  sleep 0.5
+  play n3
+  play n4
+  sleep 0.5
+  play n5
+  play n6
+  sleep 0.5
+  play n7
+  play n8
+  sleep 0.5
+  play n9
+  play n10
+  sleep 0.5
+  play n11
+  play n12
+  sleep 0.5
+  play n13
+  play n14
+  sleep 0.5
+  play n15
+  play n16
   sleep 0.5
 end
 
