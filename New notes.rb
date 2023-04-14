@@ -1,11 +1,27 @@
+use_synth :piano
+use_bpm 156
+
 live_loop :notes do
-  use_synth :sine do
-    1.times do
-      play :ab3
-      play :cb4
-      play :eb4
-      play :f4
-      stop
-    end
-  end
+  sleep 0.5
+  play :cb5
+  sleep 0.5
+  play :f5
+  sleep 1
+  play :f5 #sustain: 2
+  sleep 1
+  play :f5 #sustain: 2
+  sleep 1
+  play :f5
+  sleep 1
+  play :f5
+  sleep 1
+  play :eb5
+  sleep 1
+  play :db5
+  sleep 0.6
+  play :eb5
+  sleep 0.6
+  play :f5
+  sleep 1
+  stop
 end
