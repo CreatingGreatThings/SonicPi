@@ -22,7 +22,7 @@ define :notes do |n1, n2, n3, n4, n5, n6, n7, n8, n9, n10|
   play n9
   sleep 0.5
   play n10, sustain: 2
-  sleep 1
+  sleep 3
 end
 
 
@@ -30,6 +30,7 @@ live_loop :an do
   1.times do
     notes :cb5, :f5, :f5, :f5, :c5, :c5, :c5, :eb5, :eb5, :f5
     notes :f4, :a5, :a5, :a5, :a5, :c5, :c5, :eb5, :eb5, :f5
+    notes :f4, :f5, :f5, :f5, :g5, :e5, :e5, :e5, :e5, :f5
     stop
   end
 end
