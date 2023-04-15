@@ -25,8 +25,7 @@ define :notes do |n1, n2, n3, n4, n5, n6, n7, n8, n9, n10|
   sleep 3
 end
 
-
-live_loop :an do
+live_loop :measure1 do
   1.times do
     notes :cb5, :f5, :f5, :f5, :c5, :c5, :c5, :eb5, :eb5, :f5
   end
@@ -34,7 +33,7 @@ live_loop :an do
 end
 
 sleep 10
-use_synth :piano
+
 use_bpm 156
 
 nts = [:f4, :a5, :a5, :a5, :a5, :c5, :c5, :eb5, :eb5, :f5]
