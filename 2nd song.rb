@@ -29,8 +29,33 @@ end
 live_loop :an do
   1.times do
     notes :cb5, :f5, :f5, :f5, :c5, :c5, :c5, :eb5, :eb5, :f5
-    notes :f4, :a5, :a5, :a5, :a5, :c5, :c5, :eb5, :eb5, :f5
-    notes :f4, :f5, :f5, :f5, :g5, :e5, :e5, :e5, :e5, :f5
-    stop
   end
+  stop
+end
+
+sleep 10
+use_synth :piano
+use_bpm 156
+
+nts = [:f4, :a5, :a5, :a5, :a5, :c5, :c5, :eb5, :eb5, :f5]
+slp = [0.5, 0.5, 1, 1, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 3]
+index = 0
+
+live_loop :measure2 do
+  11.times do
+    play nts[index]
+    sleep slp[index]
+    index = index + 1
+    puts(index)
+  end
+  stop
+end
+
+sleep 8
+
+live_loop :measure3 do
+  1.times do
+    notes :f4, :f5, :f5, :f5, :g5, :e5, :e5, :e5, :e5, :f5
+  end
+  stop
 end
