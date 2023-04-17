@@ -1,3 +1,7 @@
+m3_s = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m3_s.wav"
+m2_s = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m2_s.wav"
+m1_s2 = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m1_s2.wav"
+m1_s1 = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m1_s1.wav"
 dj_effect = "C:/Users/marcelo_aeschbacher/Documents/Audacity/DJ.wav"
 
 live_loop :dj do
@@ -6,6 +10,13 @@ live_loop :dj do
 end
 
 sleep 4
+
+live_loop :m1 do
+  sample m1_s1
+  stop
+end
+
+sleep 3
 
 use_bpm 156
 use_synth :sine
