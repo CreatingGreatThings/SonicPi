@@ -6,19 +6,20 @@ m1_s1 = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m1_s1.wav"
 dj_effect = "C:/Users/marcelo_aeschbacher/Documents/Audacity/DJ.wav"
 
 live_loop :happy do
+  sleep 1
   live_loop :dj do
     sample dj_effect
     stop
   end
   
-  sleep 4
+  sleep 3
   
   live_loop :m1 do
     sample m1_s1
     stop
   end
   
-  sleep 3
+  sleep 2.5
   
   use_bpm 156
   use_synth :sine
@@ -54,7 +55,7 @@ live_loop :happy do
     stop
   end
   
-  sleep 10
+  sleep 9
   
   live_loop :m1_2 do
     sample m1_s2
@@ -65,8 +66,8 @@ live_loop :happy do
   
   use_bpm 60
   live_loop :foo do
-    7.times do
-      sample :drum_heavy_kick
+    15.times do
+      sample :drum_bass_soft
       sleep 1
     end
     stop
