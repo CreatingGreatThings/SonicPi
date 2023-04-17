@@ -54,6 +54,13 @@ end
 
 sleep 10
 
+live_loop :m1_2 do
+  sample m1_s2
+  stop
+end
+
+sleep 7
+
 use_bpm 60
 live_loop :foo do
   7.times do
@@ -79,11 +86,25 @@ live_loop :measure2 do
   stop
 end
 
-sleep 8
+sleep 7
+
+live_loop :m2 do
+  sample m2_s
+  stop
+end
+
+sleep 6
 
 live_loop :measure3 do
   1.times do
     notes :f4, :f5, :f5, :f5, :g5, :e5, :e5, :e5, :e5, :f5
   end
+  stop
+end
+
+sleep 8
+
+live_loop :m3 do
+  sample m3_s
   stop
 end
