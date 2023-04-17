@@ -34,6 +34,15 @@ end
 
 sleep 10
 
+use_bpm 60
+live_loop :foo do
+  7.times do
+    sample :drum_heavy_kick
+    sleep 1
+  end
+  stop
+end
+
 use_bpm 156
 
 nts = [:f4, :a5, :a5, :a5, :a5, :c5, :c5, :eb5, :eb5, :f5]
