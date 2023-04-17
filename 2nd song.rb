@@ -1,3 +1,12 @@
+dj_effect = "C:/Users/marcelo_aeschbacher/Documents/Audacity/DJ.wav"
+
+live_loop :dj do
+  sample dj_effect
+  stop
+end
+
+sleep 4
+
 use_bpm 156
 use_synth :sine
 
