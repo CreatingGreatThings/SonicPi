@@ -122,7 +122,25 @@ live_loop :happy do
   sleep 8
   
   live_loop :m3 do
-    sample m3_s
+    sample m3_s, amp: 2
+    stop
+  end
+  
+  
+  live_loop :drm do
+    use_bpm 156
+    54.times do
+      3.times do
+        sleep 1
+        sample :drum_bass_hard
+      end
+      sleep 1
+      sample :drum_cymbal_open
+      sleep 3
+      sample :drum_snare_soft
+      sleep 1
+      sample :drum_snare_hard
+    end
     stop
   end
   
@@ -131,7 +149,7 @@ live_loop :happy do
   live_loop :rewind do
     sample dj_rewind
     sleep 0.5
-    sample dj_rewind
+    sample dj_rewind, release: 6
     stop
   end
   sleep 10
