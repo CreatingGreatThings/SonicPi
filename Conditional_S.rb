@@ -1,12 +1,12 @@
-a = 0
+a = 1
 
 live_loop :drum do
-  15.times do
-    if a < 5
+  11.times do
+    if a <= 3
       sample :drum_bass_soft
-    elsif a > 5
+    elsif a == 4
       sample :drum_bass_hard
-    else a >= 10
+    else a > 10
       sample :drum_bass_soft
     end
     
