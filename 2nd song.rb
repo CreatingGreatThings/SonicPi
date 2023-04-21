@@ -1,13 +1,17 @@
 dj_rewind = "C:/Users/marcelo_aeschbacher/Documents/Audacity/dj_rewind.wav"
-m3_s = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m3_s.wav"
+m3_s = "C:/Users/marcelo_aeschbacher/Documents/Audacity/final_s.wav"
 m2_s = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m2_s.wav"
 m1_s2 = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m1_s2.wav"
 m1_s1 = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m1_s1.wav"
 dj_effect = "C:/Users/marcelo_aeschbacher/Documents/Audacity/DJ.wav"
 
+
 live_loop :happy do
   live_loop :dj do
-    sample dj_effect
+    10.times do
+      sample dj_effect, attack: 6
+      stop
+    end
     stop
   end
   
@@ -64,10 +68,21 @@ live_loop :happy do
   sleep 7
   
   use_bpm 60
-  live_loop :foo do
-    15.times do
-      sample :drum_bass_soft
+  a = 1
+  
+  live_loop :drum do
+    11.times do
+      if a <= 3
+        sample :drum_bass_soft
+      elsif a == 4
+        sample :drum_bass_hard
+      else a > 10
+        sample :drum_bass_soft
+      end
+      
       sleep 1
+      a = a + 1
+      puts(a)
     end
     stop
   end
@@ -111,15 +126,13 @@ live_loop :happy do
     stop
   end
   
-  sleep 3
+  sleep 549
   
   live_loop :rewind do
     sample dj_rewind
     sleep 0.5
     sample dj_rewind
-    sleep 0.5
-    sample dj_rewind
     stop
   end
-  sleep 8
+  sleep 10
 end
