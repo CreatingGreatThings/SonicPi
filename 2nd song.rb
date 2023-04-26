@@ -6,12 +6,9 @@ m1_s1 = "C:/Users/marcelo_aeschbacher/Documents/Audacity/m1_s1.wav"
 dj_effect = "C:/Users/marcelo_aeschbacher/Documents/Audacity/DJ.wav"
 
 live_loop :dj do
-  10.times do
     sample dj_effect, attack: 6
     stop
   end
-  stop
-end
 
 sleep 3
 
