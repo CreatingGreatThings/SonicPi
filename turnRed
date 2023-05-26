@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class turnRed : MonoBehaviour
+{
+    private Color Red;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // To use any color just Google the (R,G,B,A) value
+        Red = new Color32(127, 255, 0, 0);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    // Upon collision with another GameObject, another GameObject will turn green
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag == "domino1")
+        {
+            // Use the Console to understand what your code is doings
+            Debug.Log("HIT DETECTED!");
+
+            // Remove any material already on the "Red" GameObject then set the color to be Red
+            GameObject.FindWithTag("ball").GetComponent<Renderer>().material = null;
+            GameObject.FindWithTag("ball").GetComponent<Renderer>().material.color = Color.red;
+            //GameObject.FindWithTag("plat").GetComponent<Renderer>().material.color = Red;
+        }
+    }
+}
